@@ -14,7 +14,7 @@ const Header = () => {
   // header state
   const [isActive, setIsActive] = useState(false);
   // nav mobile state
-  const [navMobile, setNavMobile] = useState(false);
+  const [navMobile, setNavMobile] = useState(true);
   // scroll event
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -25,7 +25,7 @@ const Header = () => {
     <header
       className={`${
         isActive ? "h-[100px] lg:h-[110px] shadow-lg" : "h-[120px] lg:h-[150px]"
-      } fixed left-0 right-0 top-0 z-10 max-w-[1920px] w-full mx-auto transition-all duration-300`}
+      } fixed left-0 right-0 z-10 max-w-[1920px] w-full mx-auto transition-all duration-300`}
     >
       <div className="flex justify-between items-center h-full pl-[50px] pr-[60px]">
         {/* logo */}
@@ -41,7 +41,13 @@ const Header = () => {
           <TiThMenuOutline className="text-3xl" />
         </div>
         {/* nav mobile - showing by default - hidden on desktop */}
-        <div className="fixed bg-red-500 w-full h-full left-0 -z-10 transition-all duration-300">
+        <div
+          className={`${navMobile ? "max-h-full" : "max-h-0"} ${
+            isActive
+              ? "top-[100px] lg:top-[110px]"
+              : "top-[120px] lg:top-[150px]"
+          } fixed bg-white w-full h-full left-0 -z-10 transition-all duration-300`}
+        >
           <NavMobile />
         </div>
       </div>
