@@ -14,7 +14,7 @@ const Header = () => {
   // header state
   const [isActive, setIsActive] = useState(false);
   // nav mobile state
-  const [navMobile, setNavMobile] = useState(true);
+  const [navMobile, setNavMobile] = useState(false);
   // scroll event
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -37,7 +37,10 @@ const Header = () => {
           <Nav />
         </div>
         {/* nav menu hamburger - showing by default - hidden on desktop */}
-        <div className="xl:hidden absolute right-[5%] bg-dark text-white p-2 rounded-md cursor-pointer">
+        <div
+          onClick={() => setNavMobile(!navMobile)}
+          className="xl:hidden absolute right-[5%] bg-dark text-white p-2 rounded-md cursor-pointer"
+        >
           <TiThMenuOutline className="text-3xl" />
         </div>
         {/* nav mobile - showing by default - hidden on desktop */}
@@ -49,6 +52,10 @@ const Header = () => {
           } fixed bg-white w-full h-full left-0 -z-10 transition-all duration-300`}
         >
           <NavMobile />
+        </div>
+        {/* socials icons - initially hidden - show on desktop */}
+        <div className="hidden xl:flex">
+          <Socials />
         </div>
       </div>
     </header>
