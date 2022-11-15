@@ -1,5 +1,7 @@
 # Hi, my name is Maks and this is Tattoo Studio landing page example.
 
+https://user-images.githubusercontent.com/96842769/201917309-79dfbf2a-2d88-4d00-973c-a44262527323.mp4
+
 It is made with CRA
 
 ## How to run?
