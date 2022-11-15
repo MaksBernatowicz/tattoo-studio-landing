@@ -28,7 +28,7 @@ const Hero = () => {
         className="container mx-auto min-h-[40vh] lg:h-full flex items-center justify-center xl:justify-end"
       >
         {/* text & btn */}
-        <div className="text-white text-center lg:text-left lg:max-w-[640px]">
+        <div className="text-white text-center lg:text-left lg:max-w-[720px]">
           {/* text */}
           <motion.h1 variants={fadeIn("down")} className="h1">
             {title}
